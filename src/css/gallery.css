@@ -6,23 +6,25 @@
 }
 
 .gallery {
-  display: flex;
-  flex-direction: row;
   list-style: none;
   padding: 0;
-  max-width: 1128px;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin: 24px auto;
 
   border: 1px solid rgb(199, 194, 194);
   border-radius: 10px;
-  padding: 10px;
+
   box-shadow: 5px 10px 10px rgba(10, 6, 238, 0.2);
   background-color: #eee8e8;
+
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 24px;
+  width: 1128px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .gallery-item {
+  flex: 0 0 360px;
   width: 360px;
   height: 200px;
   transform: scale(1);

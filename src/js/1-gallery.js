@@ -1,5 +1,7 @@
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const images = [
   {
@@ -96,20 +98,23 @@ alt="${description}"
 
 ulGalleryEl.innerHTML = markup
 
-// const lightbox = new SimpleLightbox('.gallery a', {
-//   captionsData: 'alt', // використовує значення атрибута alt
-//   captionDelay: 250,   // затримка для появи підпису
-// });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 
 
 
-// lightbox.on('show.simplelightbox', () => {
-//   const activeImage = document.querySelector('.sl-current img');
-//   const soundSrc = activeImage?.dataset.sound;
-  
-//   if (soundSrc) {
-//     const audio = new Audio(soundSrc);
-//     audio.play().catch(e => console.warn('Audio play error:', e));
-//   }
-// });
+ulGalleryEl.addEventListener('click', event => {
+  const targetImg = event.target.closest('img.gallery-image');
+  if (!targetImg) return;
+
+  const soundSrc = targetImg.dataset.sound;
+
+  if (soundSrc) {
+    const audio = new Audio(soundSrc);
+    audio.play().catch(e => console.warn('Audio play error:', e));
+  }
+});
+

@@ -22,6 +22,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  background-color: aliceblue;
 }
 
 main {
@@ -29,4 +30,14 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+textarea,
+input {
+  width: 360px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  resize: none;
+  margin-top: 8px;
 }
